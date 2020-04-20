@@ -7,7 +7,8 @@ kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configu
 
 ## Define volumes 
 
-### Create busybox pod with two containers, each one will have the image busybox and will run the 'sleep 3600' command. Make both containers mount an emptyDir at '/etc/foo'. Connect to the second busybox, write the first column of '/etc/passwd' file to '/etc/foo/passwd'. Connect to the first busybox and write '/etc/foo/passwd' file to standard output. Delete pod.
+### 2つのコンテナーでbusyboxポッドを作成します。それぞれにイメージbusyboxがあり、「sleep 3600」コマンドを実行します。 両方のコンテナにemptyDirを「/etc/foo」にマウントさせます。 2番目のbusyboxに接続し、「/etc/passwd」ファイルの最初の列を「/etc/foo/passwd」に書き込みます。 最初のbusyboxに接続し、「/etc/foo/passwd」ファイルを標準出力に書き込みます。 ポッドを削除します。
+Create busybox pod with two containers, each one will have the image busybox and will run the 'sleep 3600' command. Make both containers mount an emptyDir at '/etc/foo'. Connect to the second busybox, write the first column of '/etc/passwd' file to '/etc/foo/passwd'. Connect to the first busybox and write '/etc/foo/passwd' file to standard output. Delete pod.
 
 <details><summary>show</summary>
 <p>
@@ -82,7 +83,8 @@ kubectl delete po busybox
 </details>
 
 
-### Create a PersistentVolume of 10Gi, called 'myvolume'. Make it have accessMode of 'ReadWriteOnce' and 'ReadWriteMany', storageClassName 'normal', mounted on hostPath '/etc/foo'. Save it on pv.yaml, add it to the cluster. Show the PersistentVolumes that exist on the cluster
+### 「myvolume」と呼ばれる10GiのPersistentVolumeを作成します。 hostPath '/etc/foo'にマウントされたaccessModeが 'ReadWriteOnce'および 'ReadWriteMany'、storageClassName 'normal'になるようにします。 それをpv.yamlに保存し、クラスターに追加します。 クラスターに存在する永続ボリュームを表示する
+Create a PersistentVolume of 10Gi, called 'myvolume'. Make it have accessMode of 'ReadWriteOnce' and 'ReadWriteMany', storageClassName 'normal', mounted on hostPath '/etc/foo'. Save it on pv.yaml, add it to the cluster. Show the PersistentVolumes that exist on the cluster
 
 <details><summary>show</summary>
 <p>
@@ -118,7 +120,8 @@ kubectl get pv
 </p>
 </details>
 
-### Create a PersistentVolumeClaim for this storage class, called mypvc, a request of 4Gi and an accessMode of ReadWriteOnce, with the storageClassName of normal, and save it on pvc.yaml. Create it on the cluster. Show the PersistentVolumeClaims of the cluster. Show the PersistentVolumes of the cluster
+### mypvcと呼ばれるこのストレージクラスのPersistentVolumeClaimを作成し、4GiのリクエストとreadWriteOnceのaccessModeを通常のstorageClassNameで作成して、pvc.yamlに保存します。 それをクラスター上に作成します。 クラスターのPersistentVolumeClaimsを表示します。 クラスターの永続ボリュームを表示する
+Create a PersistentVolumeClaim for this storage class, called mypvc, a request of 4Gi and an accessMode of ReadWriteOnce, with the storageClassName of normal, and save it on pvc.yaml. Create it on the cluster. Show the PersistentVolumeClaims of the cluster. Show the PersistentVolumes of the cluster
 
 <details><summary>show</summary>
 <p>
@@ -157,7 +160,8 @@ kubectl get pv # will show as 'Bound' as well
 </p>
 </details>
 
-### Create a busybox pod with command 'sleep 3600', save it on pod.yaml. Mount the PersistentVolumeClaim to '/etc/foo'. Connect to the 'busybox' pod, and copy the '/etc/passwd' file to '/etc/foo/passwd'
+### コマンド 'sleep 3600'でbusyboxポッドを作成し、pod.yamlに保存します。 PersistentVolumeClaimを '/etc/foo'にマウントします。 「busybox」ポッドに接続し、「/etc/passwd」ファイルを「/etc/foo/passwd」にコピーします
+Create a busybox pod with command 'sleep 3600', save it on pod.yaml. Mount the PersistentVolumeClaim to '/etc/foo'. Connect to the 'busybox' pod, and copy the '/etc/passwd' file to '/etc/foo/passwd'
 
 <details><summary>show</summary>
 <p>
@@ -216,7 +220,8 @@ kubectl exec busybox -it -- cp /etc/passwd /etc/foo/passwd
 </p>
 </details>
 
-### Create a second pod which is identical with the one you just created (you can easily do it by changing the 'name' property on pod.yaml). Connect to it and verify that '/etc/foo' contains the 'passwd' file. Delete pods to cleanup
+### 作成したポッドと同じ2つ目のポッドを作成します（pod.yamlの「name」プロパティを変更することで簡単に実行できます）。 これに接続し、「/ etc / foo」に「passwd」ファイルが含まれていることを確認します。 クリーンアップするポッドを削除する
+Create a second pod which is identical with the one you just created (you can easily do it by changing the 'name' property on pod.yaml). Connect to it and verify that '/etc/foo' contains the 'passwd' file. Delete pods to cleanup
 
 <details><summary>show</summary>
 <p>
@@ -235,7 +240,8 @@ kubectl delete po busybox busybox2
 </p>
 </details>
 
-### Create a busybox pod with 'sleep 3600' as arguments. Copy '/etc/passwd' from the pod to your local folder
+### 引数として「sleep 3600」を使用してbusyboxポッドを作成します。 ポッドからローカルフォルダーに「/etc/passwd」をコピーします
+Create a busybox pod with 'sleep 3600' as arguments. Copy '/etc/passwd' from the pod to your local folder
 
 <details><summary>show</summary>
 <p>
