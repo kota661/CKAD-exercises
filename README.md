@@ -4,9 +4,9 @@
 
 # CKAD Exercises
 
-A set of exercises that helped me prepare for the [Certified Kubernetes Application Developer](https://www.cncf.io/certification/ckad/) exam, offered by the Cloud Native Computing Foundation, organized by curriculum domain. They may as well serve as learning and practicing with Kubernetes.
+Cloud Native Computing Foundationが提供する[認定されたKubernetesアプリケーション開発者](https://www.cncf.io/certification/ckad/)試験の準備に役立つ一連の演習。カリキュラムドメインごとに編成されています。 彼らは、Kubernetesでの学習および実践として役立つこともあります。
 
-During the exam, you are allowed to keep only one other browser tab open to refer official documentation. Make a mental note of the breadcrumb at the start of the excercise section, to quickly locate the relevant document in kubernetes.io. It is recommended that you read official documents before attempting exercises below it.
+試験中は、公式ドキュメントを参照するために開いているブラウザタブを1つだけ保持できます。 演習セクションの冒頭にあるパンくずリストをメンタルにメモして、kubernetes.ioで関連ドキュメントをすばやく見つけます。 その下の演習を行う前に、公式文書を読むことをお勧めします。
 
 ## Contents
 
@@ -18,9 +18,14 @@ During the exam, you are allowed to keep only one other browser tab open to refe
 - [Services and networking - 13%](f.services.md)
 - [State persistence - 8%](g.state.md)
 
-### Can I PR? There is an error/an alternative way/an extra question/solution I can offer
+### Can I PR? 
 
-Absolutely! Feel free to PR and edit/add questions and solutions, but please stick to the existing format.
+自由にPRしてください。
+例えば
+・機械的に翻訳した部分が多いため、不自然な日本語修正
+・解説内容に対するエラーや別の方法の提案、追加のクイズや解答など
+
+Fork元へのPRは[dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)です。
 
 ### References
 - [here](https://github.com/twajr/ckad-prep-notes) from twajr
