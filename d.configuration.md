@@ -5,7 +5,8 @@
 
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configure a Pod to Use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
 
-### Create a configmap named config with values foo=lala,foo2=lolo
+### 値foo = lala、foo2 = loloを持つconfigという名前のconfigmapを作成します
+Create a configmap named config with values foo=lala,foo2=lolo
 
 <details><summary>show</summary>
 <p>
@@ -17,7 +18,8 @@ kubectl create configmap config --from-literal=foo=lala --from-literal=foo2=lolo
 </p>
 </details>
 
-### Display its values
+### その値を表示する
+Display its values
 
 <details><summary>show</summary>
 <p>
@@ -31,7 +33,8 @@ kubectl describe cm config
 </p>
 </details>
 
-### Create and display a configmap from a file
+### ファイルからconfigmapを作成して表示する
+Create and display a configmap from a file
 
 Create the file with
 
@@ -50,7 +53,8 @@ kubectl get cm configmap2 -o yaml
 </p>
 </details>
 
-### Create and display a configmap from a .env file
+### .envファイルからconfigmapを作成して表示する
+Create and display a configmap from a .env file
 
 Create the file with the command
 
@@ -69,7 +73,8 @@ kubectl get cm configmap3 -o yaml
 </p>
 </details>
 
-### Create and display a configmap from a file, giving the key 'special'
+### ファイルからconfigmapを作成して表示し、キーに「特別」を指定します
+Create and display a configmap from a file, giving the key 'special'
 
 Create the file with
 
@@ -89,7 +94,8 @@ kubectl get cm configmap4 -o yaml
 </p>
 </details>
 
-### Create a configMap called 'options' with the value var5=val5. Create a new nginx pod that loads the value from variable 'var5' in an env variable called 'option'
+### 値var5 = val5の「options」という名前のconfigMapを作成します。 変数「var5」の値を「option」という環境変数にロードする新しいnginxポッドを作成します
+Create a configMap called 'options' with the value var5=val5. Create a new nginx pod that loads the value from variable 'var5' in an env variable called 'option'
 
 <details><summary>show</summary>
 <p>
@@ -133,7 +139,8 @@ kubectl exec -it nginx -- env | grep option # will show 'option=val5'
 </p>
 </details>
 
-### Create a configMap 'anotherone' with values 'var6=val6', 'var7=val7'. Load this configMap as env variables into a new nginx pod
+### 値が「var6 = val6」、「var7 = val7」のconfigMap「anotherone」を作成します。 このconfigMapを環境変数として新しいnginxポッドにロードします
+Create a configMap 'anotherone' with values 'var6=val6', 'var7=val7'. Load this configMap as env variables into a new nginx pod
 
 <details><summary>show</summary>
 <p>
@@ -174,7 +181,8 @@ kubectl exec -it nginx -- env
 </p>
 </details>
 
-### Create a configMap 'cmvolume' with values 'var8=val8', 'var9=val9'. Load this as a volume inside an nginx pod on path '/etc/lala'. Create the pod and 'ls' into the '/etc/lala' directory.
+### 値が「var8 = val8」、「var9 = val9」のconfigMap「cmvolume」を作成します。 これをnginxポッド内のボリュームとしてパス '/ etc / lala'にロードします。 ポッドと「ls」を「/ etc / lala」ディレクトリに作成します。
+Create a configMap 'cmvolume' with values 'var8=val8', 'var9=val9'. Load this as a volume inside an nginx pod on path '/etc/lala'. Create the pod and 'ls' into the '/etc/lala' directory.
 
 <details><summary>show</summary>
 <p>
@@ -225,7 +233,8 @@ cat var8 # will show val8
 
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
-### Create the YAML for an nginx pod that runs with the user ID 101. No need to create the pod
+### ユーザーID 101で実行されるnginxポッドのYAMLを作成します。ポッドを作成する必要はありません
+Create the YAML for an nginx pod that runs with the user ID 101. No need to create the pod
 
 <details><summary>show</summary>
 <p>
@@ -260,7 +269,8 @@ status: {}
 </details>
 
 
-### Create the YAML for an nginx pod that has the capabilities "NET_ADMIN", "SYS_TIME" added on its single container
+### 単一のコンテナーに追加された機能「NET_ADMIN」、「SYS_TIME」を持つnginxポッドのYAMLを作成します
+Create the YAML for an nginx pod that has the capabilities "NET_ADMIN", "SYS_TIME" added on its single container
 
 <details><summary>show</summary>
 <p>
@@ -299,7 +309,8 @@ status: {}
 
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Assign CPU Resources to Containers and Pods](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/)
 
-### Create an nginx pod with requests cpu=100m,memory=256Mi and limits cpu=200m,memory=512Mi
+### リクエストcpu = 100m、memory = 256Miと制限cpu = 200m、memory = 512Miでnginxポッドを作成します
+Create an nginx pod with requests cpu=100m,memory=256Mi and limits cpu=200m,memory=512Mi
 
 <details><summary>show</summary>
 <p>
@@ -317,7 +328,8 @@ kubernetes.io > Documentation > Concepts > Configuration > [Secrets](https://kub
 
 kubernetes.io > Documentation > Tasks > Inject Data Into Applications > [Distribute Credentials Securely Using Secrets](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/)
 
-### Create a secret called mysecret with the values password=mypass
+### mysecretというシークレットを作成し、値をpassword = mypassにします
+Create a secret called mysecret with the values password=mypass
 
 <details><summary>show</summary>
 <p>
@@ -329,7 +341,8 @@ kubectl create secret generic mysecret --from-literal=password=mypass
 </p>
 </details>
 
-### Create a secret called mysecret2 that gets key/value from a file
+### ファイルからキー/値を取得するmysecret2というシークレットを作成します
+Create a secret called mysecret2 that gets key/value from a file
 
 Create a file called username with the value admin:
 
@@ -347,7 +360,8 @@ kubectl create secret generic mysecret2 --from-file=username
 </p>
 </details>
 
-### Get the value of mysecret2
+### mysecret2の値を取得する
+Get the value of mysecret2
 
 <details><summary>show</summary>
 <p>
@@ -366,7 +380,8 @@ kubectl get secret mysecret2 -o jsonpath='{.data.username}{"\n"}' | base64 -d  #
 </p>
 </details>
 
-### Create an nginx pod that mounts the secret mysecret2 in a volume on path /etc/foo
+### パス/etc/foo のボリュームにシークレットmysecret2をマウントするnginxポッドを作成します
+Create an nginx pod that mounts the secret mysecret2 in a volume on path /etc/foo
 
 <details><summary>show</summary>
 <p>
@@ -412,7 +427,8 @@ cat /etc/foo/username # shows admin
 </p>
 </details>
 
-### Delete the pod you just created and mount the variable 'username' from secret mysecret2 onto a new nginx pod in env variable called 'USERNAME'
+### 作成したポッドを削除し、変数「username」をシークレットmysecret2から「USERNAME」という環境変数の新しいnginxポッドにマウントします
+Delete the pod you just created and mount the variable 'username' from secret mysecret2 onto a new nginx pod in env variable called 'USERNAME'
 
 <details><summary>show</summary>
 <p>
@@ -460,7 +476,8 @@ kubectl exec -it nginx -- env | grep USERNAME | cut -d '=' -f 2 # will show 'adm
 
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configure Service Accounts for Pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
 
-### See all the service accounts of the cluster in all namespaces
+### すべての名前空間のクラスターのすべてのサービスアカウントを表示する
+See all the service accounts of the cluster in all namespaces
 
 <details><summary>show</summary>
 <p>
@@ -472,7 +489,8 @@ kubectl get sa --all-namespaces
 </p>
 </details>
 
-### Create a new serviceaccount called 'myuser'
+### 「myuser」という新しいサービスアカウントを作成します。
+Create a new serviceaccount called 'myuser'
 
 <details><summary>show</summary>
 <p>
@@ -503,7 +521,8 @@ kubectl create -f sa.yaml
 </p>
 </details>
 
-### Create an nginx pod that uses 'myuser' as a service account
+### 「myuser」をサービスアカウントとして使用するnginxポッドを作成する
+Create an nginx pod that uses 'myuser' as a service account
 
 <details><summary>show</summary>
 <p>
