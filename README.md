@@ -21,11 +21,10 @@ Cloud Native Computing Foundationが提供する[認定されたKubernetesアプ
 ### Can I PR? 
 
 自由にPRしてください。
-例えば
-・機械的に翻訳した部分が多いため、不自然な日本語修正
-・解説内容に対するエラーや別の方法の提案、追加のクイズや解答など
+- 不自然な日本語修正(機械的に翻訳した部分が多くすみません。。)
+- 解説内容に対するエラーや別の方法の提案、追加のクイズや解答
 
-Fork元へのPRは[dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)です。
+> Fork元へのPRは[dgkanatsios/CKAD-exercises](https://github.com/dgkanatsios/CKAD-exercises)です。
 
 ### References
 - [here](https://github.com/twajr/ckad-prep-notes) from twajr
