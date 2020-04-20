@@ -1,7 +1,8 @@
 ![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/services&empty)
 # Services and Networking (13%)
 
-### Create a pod with image nginx called nginx and expose its port 80
+### nginxというイメージnginxでポッドを作成し、ポート80を公開します
+Create a pod with image nginx called nginx and expose its port 80
 
 <details><summary>show</summary>
 <p>
@@ -15,7 +16,8 @@ kubectl run nginx --image=nginx --restart=Never --port=80 --expose
 </details>
 
 
-### Confirm that ClusterIP has been created. Also check endpoints
+### ClusterIPが作成されたことを確認します。 エンドポイントも確認する
+Confirm that ClusterIP has been created. Also check endpoints
 
 <details><summary>show</summary>
 <p>
@@ -28,7 +30,8 @@ kubectl get ep # endpoints
 </p>
 </details>
 
-### Get service's ClusterIP, create a temp busybox pod and 'hit' that IP with wget
+### サービスのClusterIPを取得し、一時的なbusyboxポッドを作成し、そのIPをwgetでhit'します。
+Get service's ClusterIP, create a temp busybox pod and 'hit' that IP with wget
 
 <details><summary>show</summary>
 <p>
@@ -53,7 +56,8 @@ kubectl run busybox --rm --image=busybox -it --restart=Never --env="IP=$IP" -- w
 </p>
 </details>
 
-### Convert the ClusterIP to NodePort for the same service and find the NodePort port. Hit service using Node's IP. Delete the service and the pod at the end.
+### 同じサービスのClusterIPをNodePortに変換し、NodePortポートを見つけます。 ノードのIPを使用してサービスにアクセスします。 最後にサービスとポッドを削除します。
+Convert the ClusterIP to NodePort for the same service and find the NodePort port. Hit service using Node's IP. Delete the service and the pod at the end.
 
 <details><summary>show</summary>
 <p>
@@ -109,7 +113,8 @@ kubectl delete pod nginx # Deletes the pod
 </p>
 </details>
 
-### Create a deployment called foo using image 'dgkanatsios/simpleapp' (a simple server that returns hostname) and 3 replicas. Label it as 'app=foo'. Declare that containers in this pod will accept traffic on port 8080 (do NOT create a service yet)
+### イメージ「dgkanatsios / simpleapp」（ホスト名を返す単純なサーバー）と3つのレプリカを使用して、fooというデプロイを作成します。 「app = foo」というラベルを付けます。 このポッドのコンテナがポート8080のトラフィックを受け入れることを宣言します（まだサービスを作成しないでください）
+Create a deployment called foo using image 'dgkanatsios/simpleapp' (a simple server that returns hostname) and 3 replicas. Label it as 'app=foo'. Declare that containers in this pod will accept traffic on port 8080 (do NOT create a service yet)
 
 <details><summary>show</summary>
 <p>
@@ -159,7 +164,8 @@ status: {}
 </p>
 </details>
 
-### Get the pod IPs. Create a temp busybox pod and trying hitting them on port 8080
+### ポッドIPを取得します。 一時的なbusyboxポッドを作成し、ポート8080でヒットしてみます
+Get the pod IPs. Create a temp busybox pod and trying hitting them on port 8080
 
 <details><summary>show</summary>
 <p>
@@ -176,7 +182,8 @@ exit
 </p>
 </details>
 
-### Create a service that exposes the deployment on port 6262. Verify its existence, check the endpoints
+### ポート6262でデプロイメントを公開するサービスを作成します。その存在を確認し、エンドポイントを確認します
+Create a service that exposes the deployment on port 6262. Verify its existence, check the endpoints
 
 <details><summary>show</summary>
 <p>
@@ -191,7 +198,8 @@ kubectl get endpoints foo # you will see the IPs of the three replica nodes, lis
 </p>
 </details>
 
-### Create a temp busybox pod and connect via wget to foo service. Verify that each time there's a different hostname returned. Delete deployment and services to cleanup the cluster
+### temp busyboxポッドを作成し、wgetを介してfooサービスに接続します。 毎回異なるホスト名が返されることを確認します。 デプロイメントとサービスを削除してクラスターをクリーンアップします
+Create a temp busybox pod and connect via wget to foo service. Verify that each time there's a different hostname returned. Delete deployment and services to cleanup the cluster
 
 <details><summary>show</summary>
 <p>
@@ -209,7 +217,8 @@ kubectl delete deploy foo
 </p>
 </details>
 
-### Create an nginx deployment of 2 replicas, expose it via a ClusterIP service on port 80. Create a NetworkPolicy so that only pods with labels 'access: granted' can access the deployment and apply it
+### 2つのレプリカのnginxデプロイメントを作成し、ポート80のClusterIPサービスを介してそれを公開します。「アクセス：許可」というラベルの付いたポッドのみがデプロイメントにアクセスして適用できるようにNetworkPolicyを作成します
+Create an nginx deployment of 2 replicas, expose it via a ClusterIP service on port 80. Create a NetworkPolicy so that only pods with labels 'access: granted' can access the deployment and apply it
 
 kubernetes.io > Documentation > Concepts > Services, Load Balancing, and Networking > [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
 
